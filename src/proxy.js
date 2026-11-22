@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { COOKIE, verifySession } from '@/lib/auth';
 
 // every page and API is private, except the login page and the login API
-export async function middleware(req) {
+export async function proxy(req) {
   const { pathname } = req.nextUrl;
   const session = await verifySession(req.cookies.get(COOKIE)?.value);
 
