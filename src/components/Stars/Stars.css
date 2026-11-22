@@ -1,0 +1,12 @@
+.sky {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse 70% 50% at 70% 0%, rgba(120, 80, 200, 0.22), transparent 70%),
+    radial-gradient(ellipse 50% 40% at 10% 100%, rgba(232, 150, 90, 0.08), transparent 70%);
+}
+.sky__star { position: absolute; border-radius: 50%; background: #fff8ec; opacity: var(--o, 1); animation: sky-tw ease-in-out infinite; }
+@keyframes sky-tw {
+  0%, 100% { opacity: calc(var(--o, 1) * 0.3); }
+  50% { opacity: var(--o, 1); }
+}
+@media (prefers-reduced-motion: reduce) { .sky__star { animation: none; } }

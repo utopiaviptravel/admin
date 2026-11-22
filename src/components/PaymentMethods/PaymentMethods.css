@@ -1,0 +1,10 @@
+.pm__bar { display: flex; gap: 2px; height: 14px; margin: 6px 0 18px; border-radius: 7px; overflow: hidden; }
+.pm__bar span { display: block; height: 100%; }
+.pm__legend { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+.pm__legend li { display: flex; align-items: center; gap: 10px; font-size: 12.5px; }
+.pm__legend i { width: 10px; height: 10px; border-radius: 3px; flex: none; }
+.pm__v { margin-left: auto; text-align: right; }
+.pm__v b { display: block; font-family: var(--font-num); font-weight: 500; }
+.pm__v small { font-size: 10.5px; color: var(--muted); }
+.pm__occ { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--line2); }
+.pm__occ h3 { margin: 0 0 12px; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; color: var(--soft); }

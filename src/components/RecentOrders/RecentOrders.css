@@ -1,0 +1,10 @@
+.recent { list-style: none; margin: 0; padding: 0; }
+.recent li { display: flex; align-items: center; gap: 12px; padding: 12px 4px; border-top: 1px solid var(--line2); border-radius: 10px; cursor: pointer; }
+.recent li:first-child { border-top: 0; }
+.recent li:hover { background: rgba(255, 255, 255, 0.03); }
+.recent__who { flex: 1; min-width: 0; }
+.recent__who b, .recent__who small { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.recent__who b { font-size: 13px; font-weight: 600; }
+.recent__who small { font-size: 11px; color: var(--muted); }
+.recent__amt { text-align: right; }
+.recent__amt b { display: block; margin-bottom: 4px; font-family: var(--font-num); font-size: 13.5px; font-weight: 500; }

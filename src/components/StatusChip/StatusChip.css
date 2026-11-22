@@ -1,0 +1,17 @@
+/* status chip */
+.st { display: inline-flex; align-items: center; gap: 6px; min-height: 26px; padding: 0 10px; border-radius: 999px; border: 1px solid currentColor; font-size: 11px; font-weight: 600; white-space: nowrap; }
+.st svg { width: 12px; height: 12px; stroke-width: 2.2; }
+.st--paid { color: var(--good); background: rgba(76, 195, 138, 0.1); }
+.st--pending { color: var(--warn); background: rgba(240, 164, 75, 0.1); }
+.st--failed { color: var(--bad); background: rgba(240, 122, 122, 0.1); }
+.st--refunded { color: var(--neutral); background: rgba(156, 147, 184, 0.1); }
+
+/* payment method */
+.mth { display: inline-flex; align-items: center; gap: 7px; font-size: 12px; color: var(--soft); white-space: nowrap; }
+.mth i { width: 8px; height: 8px; border-radius: 2px; flex: none; }
+
+/* client initials */
+.ini {
+  flex: none; width: 38px; height: 38px; border-radius: 12px; display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 600; color: var(--gold-hi); background: rgba(232, 184, 107, 0.12); border: 1px solid rgba(232, 184, 107, 0.25);
+}

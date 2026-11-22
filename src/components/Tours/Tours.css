@@ -1,0 +1,9 @@
+.tours__grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+@media (min-width: 640px) { .tours__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .tours__grid { grid-template-columns: repeat(3, 1fr); gap: 16px; } }
+
+.tcard { padding: 18px; border-radius: 20px; background: var(--glass); border: 1px solid var(--line); }
+.tcard small { font-size: 10.5px; letter-spacing: 0.08em; color: var(--gold); }
+.tcard h3 { margin: 6px 0 14px; font-size: 15px; font-weight: 600; }
+.tcard__row { display: flex; justify-content: space-between; padding: 8px 0; border-top: 1px solid var(--line2); font-size: 12px; color: var(--soft); }
+.tcard__row b { font-family: var(--font-num); font-weight: 500; color: var(--text); }

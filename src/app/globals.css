@@ -1,0 +1,98 @@
+/* ---------- design tokens ---------- */
+:root {
+  --ink: #140f2c;
+  --panel: #1c1540;
+  --panel2: #231a4c;
+  --line: rgba(232, 184, 107, 0.16);
+  --line2: rgba(255, 255, 255, 0.07);
+  --gold: #e8b86b;
+  --gold-hi: #ffe6b4;
+  --text: #f4eeff;
+  --soft: #cfc5e6;
+  --muted: #9c93b8;
+  --c-card: #bc8633;
+  --c-split: #8a70dc;
+  --c-later: #1c98ab;
+  --good: #4cc38a;
+  --warn: #f0a44b;
+  --bad: #f07a7a;
+  --neutral: #9c93b8;
+  --font-ka: 'FiraGO', var(--font-geo), system-ui, sans-serif;
+  --font-num: var(--font-mont), system-ui, sans-serif;
+  --glass: linear-gradient(180deg, rgba(35, 26, 76, 0.72), rgba(26, 19, 58, 0.72));
+}
+
+/* ---------- base ---------- */
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html, body { margin: 0; background: var(--ink); color: var(--text); }
+body { font-family: var(--font-ka); font-size: 14px; -webkit-font-smoothing: antialiased; }
+button, input, select { font: inherit; color: inherit; }
+a { color: inherit; text-decoration: none; }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+.num { font-family: var(--font-num); font-variant-numeric: tabular-nums; }
+/* Georgian capitals (მთავრული) */
+.mt { text-transform: uppercase; letter-spacing: 0.08em; }
+
+/* ---------- buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 44px; padding: 0 18px; border-radius: 999px;
+  border: 1px solid rgba(232, 184, 107, 0.45); background: transparent; color: var(--gold-hi);
+  font-size: 12px; font-weight: 600; letter-spacing: 0.06em; white-space: nowrap; cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s, opacity 0.2s;
+}
+.btn:hover { background: rgba(232, 184, 107, 0.1); }
+.btn:disabled { opacity: 0.6; cursor: default; }
+.btn.gold { background: linear-gradient(180deg, #fff1d6, #e8b86b); color: #1a1028; border-color: transparent; box-shadow: 0 8px 24px -10px rgba(255, 190, 100, 0.6); }
+.btn.gold:hover { box-shadow: 0 10px 30px -8px rgba(255, 190, 100, 0.8); }
+.btn.sm { min-height: 36px; padding: 0 14px; font-size: 11px; }
+.btn svg { width: 16px; height: 16px; }
+
+/* ---------- inputs ---------- */
+.fld { display: flex; flex-direction: column; gap: 7px; font-size: 11px; letter-spacing: 0.08em; color: var(--muted); }
+.inp {
+  width: 100%; min-height: 48px; padding: 0 14px; border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14); background: rgba(255, 255, 255, 0.04);
+  color: var(--text); font-size: 14px; outline: none;
+}
+.inp:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(232, 184, 107, 0.18); }
+
+/* ---------- shell ---------- */
+.app { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr; min-height: 100vh; }
+.main { width: 100%; max-width: 1280px; margin: 0 auto; padding: 18px 16px 100px; }
+@media (min-width: 1024px) {
+  .app { grid-template-columns: 248px minmax(0, 1fr); }
+  .main { padding: 30px 36px 60px; }
+}
+
+/* ---------- shared bits ---------- */
+.badge {
+  display: inline-flex; align-items: center; justify-content: center; min-width: 22px; height: 22px; padding: 0 7px;
+  border-radius: 999px; background: var(--warn); color: #1a1028; font-family: var(--font-num); font-size: 11px; font-weight: 600;
+}
+
+/* page head */
+.ph { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px; margin-bottom: 22px; }
+.ph small { display: block; font-size: 11px; letter-spacing: 0.14em; color: var(--gold); }
+.ph h1 {
+  margin: 6px 0 0; font-size: clamp(22px, 4vw, 30px); font-weight: 600; letter-spacing: 0.04em;
+  background: linear-gradient(180deg, #fffdf6, #f0c27a); -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+
+/* glass panel */
+.pn { padding: 20px; border-radius: 22px; background: var(--glass); border: 1px solid var(--line); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+.pn-h { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 16px; }
+.pn-h h2 { margin: 0; font-size: 14px; font-weight: 600; letter-spacing: 0.06em; }
+.pn-h a { font-size: 11.5px; color: var(--gold-hi); }
+
+/* progress rows (seats) */
+.occ-row { margin-bottom: 12px; }
+.occ-row > div:first-child { display: flex; justify-content: space-between; margin-bottom: 6px; font-size: 12px; }
+.occ-row > div:first-child span:last-child { font-family: var(--font-num); color: var(--muted); }
+.occ-bar { height: 6px; border-radius: 3px; background: rgba(255, 255, 255, 0.07); overflow: hidden; }
+.occ-bar i { display: block; height: 100%; border-radius: 3px; background: linear-gradient(90deg, #b9822e, #ffe2a8); }
+
+.empty { padding: 40px 20px; text-align: center; color: var(--muted); font-size: 13px; }
+.loading { padding: 60px 20px; text-align: center; color: var(--muted); font-size: 13px; }

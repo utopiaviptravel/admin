@@ -1,0 +1,29 @@
+.login { position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; min-height: 100vh; min-height: 100svh; padding: 24px 16px; }
+
+.login__card {
+  position: relative; width: 100%; max-width: 400px; padding: 36px 28px 28px; border-radius: 28px; text-align: center;
+  background: linear-gradient(180deg, rgba(36, 27, 76, 0.82), rgba(18, 13, 40, 0.9));
+  border: 1px solid rgba(232, 184, 107, 0.4); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 40px 100px -40px rgba(255, 190, 100, 0.45);
+}
+.login__card::before { content: ''; position: absolute; inset: 7px; border: 1px solid rgba(232, 184, 107, 0.12); border-radius: 22px; pointer-events: none; }
+.login__card > * { position: relative; }
+.login__card .logo { margin-bottom: 22px; }
+
+.login__title {
+  margin: 0; font-size: 20px; letter-spacing: 0.06em;
+  background: linear-gradient(180deg, #fffdf6, #f0c27a); -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.login__sub { margin: 8px 0 24px; font-size: 12px; color: var(--soft); }
+
+.login__form { display: flex; flex-direction: column; gap: 14px; text-align: left; }
+.login__pw { position: relative; }
+.login__pw .inp { padding-right: 52px; }
+.login__pw button {
+  position: absolute; right: 4px; top: 50%; transform: translateY(-50%);
+  width: 44px; height: 44px; border: 0; background: none; color: var(--muted); cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+}
+.login__pw svg { width: 18px; height: 18px; }
+.login__err { min-height: 1em; margin: 0; font-size: 11px; color: var(--bad); }
+.login__form .btn { width: 100%; min-height: 52px; margin-top: 4px; font-size: 13px; }
